@@ -1,6 +1,6 @@
-version: 1.0.0
+version: 1.0.4
 files:
-  - url: sample-autoupdate-1.0.0-win.zip
-  - url: sample-autoupdate-1.0.0.exe
-path: sample-autoupdate-1.0.0-win.zip
+  - url: sample-autoupdate-1.0.4-win.zip
+  - url: sample-autoupdate-1.0.4.exe
+path: sample-autoupdate-1.0.4-win.zip
 releaseDate: '2020-12-30T13:18:34.817Z'
