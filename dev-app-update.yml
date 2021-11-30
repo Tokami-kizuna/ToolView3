@@ -1,0 +1,4 @@
+owner: Tokami-kizuna
+repo: ToolView
+provider: github
+updaterCacheDirName: sample-autoupdate-updater

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <title>autoUpdate sample3</title>
+  <style>
+    body{background-color: white;}
+  </style>
+</head>
+<body>
+
+  <h1></h1>
+
+<script>
+  const {app} = require('electron').remote;
+  const version = app.getVersion();    // 現在のバージョン情報を取得(package.json)
+
+  // h1タグにバージョンを入れる
+  document.querySelector("h1").textContent = version;
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "name": "sample-autoupdate",
+  "version": "1.0.3",
+  "description": "Electron auto update sample",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac --x64",
+    "build-mac-publish": "electron-builder --mac --x64 --publish always",
+    "build-win": "electron-builder --win --x64",
+    "build-win-publish": "electron-builder --win --x64 --publish always"
+  },
+  "author": "M.Katsube",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "electron-log": "^4.3.1",
+    "electron-notarize": "^1.0.0",
+    "electron-updater": "^4.3.5"
+  },
+  "devDependencies": {
+    "electron": "^10.4.7",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "appId": "net.makitokatsube.app.autoupdate",
+    "afterSign": "scripts/notarize.js",
+    "files": [
+      "package.json",
+      "index.js",
+      "index.html"
+    ],
+    "mac": {
+      "target": [
+        "zip",
+        "dmg"
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "publish": [
+        {
+          "provider": "github",
+          "owner": "Tokami-kizuna",
+          "repo": "ToolView"
+        }
+      ]
+    },
+    "dmg": {
+      "sign": false
+    },
+    "win": {
+      "target": "nsis",
+      "publish": [
+        {
+          "provider": "github",
+          "owner": "Tokami-kizuna",
+          "repo": "ToolView",
+          "releaseType": "release",
+          "token": "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"
+        }
+      ]
+    }
+  }
+}
